@@ -1,0 +1,107 @@
+//Basics
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+}
+
+//Color Variables
+$sidebar-background-color: #313443;
+$active-sidebar-link-color: #22252e;
+$hover-sidebar-link-color: $active-sidebar-link-color;
+$active-link-color: #98d7ec;
+$tooltip-background-color: $sidebar-background-color;
+
+.change-color-1,
+.change-color-2,
+.change-color-3,
+.change-color-4,
+.change-color-5 {
+  fill: #ffff;
+}
+.router-link-active {
+  .change-color-1 {
+    fill: #54d2ee;
+  }
+  .change-color-2 {
+    fill: #1b9e6b;
+  }
+  .change-color-3 {
+    fill: #4094e8;
+  }
+  .change-color-4 {
+    fill: #ded144;
+  }
+  .change-color-5 {
+    fill: #6e5ae7;
+  }
+}
+
+.sidebar-navigation {
+  display: block;
+  height: calc(100vh - 60px);
+  width: 80px;
+  background-color: $sidebar-background-color;
+  ul {
+    text-align: center;
+    color: white !important;
+
+    li {
+      padding: 25px 0;
+      cursor: pointer;
+      transition: all ease-out 120ms;
+
+      svg {
+        display: block;
+        margin: 0 auto;
+        font-size: 20px;
+        transition: all ease 450ms;
+      }
+
+      .tooltip {
+        display: block;
+        position: absolute;
+        background-color: #212529;
+        padding: 10px 20px;
+        border-radius: 3px;
+        margin-top: -26px;
+        left: 90px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: -4px;
+          top: 10px;
+          transform: rotate(45deg);
+          width: 10px;
+          height: 10px;
+          background-color: inherit;
+        }
+      }
+
+      &:hover {
+        background-color: $hover-sidebar-link-color;
+
+        .tooltip {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        background-color: $active-sidebar-link-color;
+
+        svg {
+          fill: $active-link-color;
+        }
+      }
+    }
+  }
+}

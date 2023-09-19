@@ -1,0 +1,156 @@
+.main {
+  padding: 0px 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: px;
+}
+.main h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  padding: 15px 15px 15px 5px;
+}
+.container {
+  padding: 0 !important;
+
+  @media screen and (min-width: 992px) and (max-width: 1439px) {
+    max-width: 1279px !important;
+    padding: 0 !important;
+    margin: 0 80px !important;
+    width: auto !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    max-width: 959px !important;
+    margin: 0 16px !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+}
+
+.gradient-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  max-width: 550px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.container-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: #212529;
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  svg {
+    font-size: 60px;
+    border-radius: 5px;
+    padding: 15px 20px;
+  }
+  .change-color-1 {
+    border: 2px solid transparent;
+    box-shadow: rgba(27, 158, 107, 0.8) 0px 1px 3px 0px,
+      rgba(27, 158, 107, 0.5) 0px 1px 2px 0px;
+  }
+  .change-color-2 {
+    border: 2px solid transparent;
+    box-shadow: rgba(64, 148, 232, 0.8) 0px 1px 3px 0px,
+      rgba(64, 148, 232, 0.5) 0px 1px 2px 0px;
+  }
+  .change-color-3 {
+    border: 2px solid transparent;
+    box-shadow: rgba(222, 209, 68, 0.8) 0px 1px 3px 0px,
+      rgba(222, 209, 68, 0.5) 0px 1px 2px 0px;
+  }
+  .change-color-4 {
+    border: 2px solid transparent;
+    box-shadow: rgba(110, 90, 231, 1) 0px 1px 3px 0px,
+      rgba(110, 90, 231, 1) 0px 1px 2px 0px;
+  }
+  img {
+    margin-bottom: 32px;
+  }
+}
+.bg-green-box:hover {
+  border: 2px solid #3da077;
+  box-shadow: rgba(27, 158, 107, 0.1) 0px 1px 0px,
+    rgba(27, 158, 107, 0.1) 0px 8px 24px, rgba(27, 158, 107, 0.1) 0px 16px 48px;
+}
+.bg-white-box:hover {
+  border: 2px solid #4094e8;
+  box-shadow: rgba(64, 148, 232, 0.1) 0px 1px 0px,
+    rgba(64, 148, 232, 0.1) 0px 8px 24px, rgba(64, 148, 232, 0.1) 0px 16px 48px;
+}
+.bg-yellow-box:hover {
+  border: 2px solid #ded144;
+  box-shadow: rgba(222, 209, 68, 0.1) 0px 1px 0px,
+    rgba(222, 209, 68, 0.1) 0px 8px 24px, rgba(222, 209, 68, 0.1) 0px 16px 48px;
+}
+.bg-blue-box:hover {
+  border: 2px solid #6E5AE7;
+  box-shadow: rgba(136, 161, 253, 0.1) 0px 1px 0px,
+    rgba(136, 161, 253, 0.1) 0px 8px 24px, rgba(136, 161, 253,0.1) 0px 16px 48px;
+}
+
+.bg-green-box,
+.bg-white-box,
+.bg-yellow-box,
+.bg-blue-box {
+  position: relative;
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-green-box::after {
+  background: linear-gradient(71deg, #0d1212, #3da077, #0d1212);
+}
+
+.bg-white-box::after {
+  background: linear-gradient(71deg, #121013, #b0afb0, #121013);
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.bg-blue-box::after {
+  background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+}
+
+.card-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
