@@ -1,3 +1,12 @@
+import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
+import {
+  TuiRootModule,
+  TuiDialogModule,
+  TuiAlertModule,
+  TUI_SANITIZER,
+  TuiScrollbarModule,
+} from '@taiga-ui/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,9 +17,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CourseComponent } from './course/course.component';
-import { SubjectComponent } from './subject/subject.component';
 import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { GroupsComponent } from './groups/groups.component';
+import { AppealsComponent } from './appeals/appeals.component';
+import { MaterialModule } from './material.module';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -20,15 +32,23 @@ import { TeacherComponent } from './teacher/teacher.component';
     HomeComponent,
     SidebarComponent,
     CourseComponent,
-    SubjectComponent,
     StudentComponent,
-    TeacherComponent
+    TeacherComponent,
+    GroupsComponent,
+    AppealsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatTableModule,
+    TuiRootModule,
+    TuiDialogModule,
+    TuiAlertModule,
+    TuiScrollbarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

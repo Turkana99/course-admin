@@ -1,19 +1,16 @@
-<app-header></app-header>
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-1">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="col-lg-11">
+<tui-root>
+  <app-header></app-header>
+  <div class="d-flex">
+    <app-sidebar></app-sidebar>
+    <div
+      style="
+        overflow-y: auto !important;
+        width: 100%;
+        height: calc(100vh - 60px);
+      "
+    >
       <router-outlet></router-outlet>
       <app-footer></app-footer>
     </div>
   </div>
-</div> -->
-<div class="d-flex justify-content-between content">
-  <app-sidebar></app-sidebar>
-  <div>
-    <router-outlet style="overflow-y: auto;"></router-outlet>
-    <app-footer></app-footer>
-  </div>
-</div>
+</tui-root>

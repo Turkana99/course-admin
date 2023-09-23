@@ -18,7 +18,8 @@ $tooltip-background-color: $sidebar-background-color;
 .change-color-2,
 .change-color-3,
 .change-color-4,
-.change-color-5 {
+.change-color-5 ,
+.change-color-6{
   fill: #ffff;
 }
 .router-link-active {
@@ -36,6 +37,9 @@ $tooltip-background-color: $sidebar-background-color;
   }
   .change-color-5 {
     fill: #6e5ae7;
+  }
+  .change-color-6 {
+    fill: #EF3658;
   }
 }
 

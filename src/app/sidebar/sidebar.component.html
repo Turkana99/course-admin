@@ -1,5 +1,6 @@
 <nav class="sidebar-navigation bg-dark">
   <ul>
+    <!--Home-->
     <li
       routerLink="home"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -18,6 +19,7 @@
       </svg>
       <span class="tooltip">Home</span>
     </li>
+    <!--Courses-->
     <li
       routerLink="course"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -36,8 +38,9 @@
       </svg>
       <span class="tooltip">Courses</span>
     </li>
+    <!--Groups-->
     <li
-      routerLink="subject"
+      routerLink="group"
       [routerLinkActiveOptions]="{ exact: true }"
       routerLinkActive="router-link-active"
     >
@@ -48,12 +51,13 @@
       >
         <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
         <path
-        class="change-color-3"
+          class="change-color-3"
           d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
         />
       </svg>
-      <span class="tooltip">Subjects</span>
+      <span class="tooltip">Groups</span>
     </li>
+    <!--Students-->
     <li
       routerLink="student"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -66,12 +70,13 @@
       >
         <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
         <path
-        class="change-color-4"
+          class="change-color-4"
           d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
         />
       </svg>
       <span class="tooltip">Students</span>
     </li>
+    <!--Teachers-->
     <li
       routerLink="teacher"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -84,11 +89,30 @@
       >
         <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
         <path
-        class="change-color-5"
+          class="change-color-5"
           d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"
         />
       </svg>
       <span class="tooltip">Teachers</span>
+    </li>
+    <!--Appeals-->
+    <li
+      routerLink="appeal"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="router-link-active"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="1em"
+        viewBox="0 0 576 512"
+      >
+        <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path
+          class="change-color-6"
+          d="M528 160V416c0 8.8-7.2 16-16 16H320c0-44.2-35.8-80-80-80H176c-44.2 0-80 35.8-80 80H64c-8.8 0-16-7.2-16-16V160H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM272 256a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm104-48c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376z"
+        />
+      </svg>
+      <span class="tooltip">Appeals</span>
     </li>
   </ul>
 </nav>
