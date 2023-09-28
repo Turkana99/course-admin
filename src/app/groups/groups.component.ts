@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy,Component, Inject, Injector } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { TuiDay } from '@taiga-ui/cdk';
+import { TuiDialogService } from '@taiga-ui/core';
+import { NewGroupComponent } from '../dialog/new-group/new-group.component';
+import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
 
 export interface PeriodicElement {
   name: string;
@@ -88,6 +93,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-groups',
   templateUrl: './groups.component.html',
   styleUrls: ['./groups.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GroupsComponent {
   displayedColumns: string[] = [
@@ -99,10 +105,41 @@ export class GroupsComponent {
     'status',
     'actions',
   ];
+  value = null;
+ 
+  items = [
+    'Active',
+    'Deactive'
+];
+
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  readonly groupForm = new FormGroup({
+    nameValue: new FormControl(''),
+    studentValue: new FormControl(''),
+    startValue: new FormControl(new TuiDay(2023, 0, 1)),
+    endValue: new FormControl(new TuiDay(2023, 0, 1)),
+    statusValue: new FormControl()
+  });
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  constructor(
+    @Inject(TuiDialogService) private readonly dialogs: TuiDialogService,
+    @Inject(Injector) private readonly injector: Injector,
+) {}
+
+showDialog(): void {
+  this.dialogs
+      .open(
+          new PolymorpheusComponent(NewGroupComponent, this.injector),
+          {
+              
+          },
+      )
+      .subscribe();
+}
 }

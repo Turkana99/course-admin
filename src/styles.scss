@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
 
 
 .main {
@@ -10,8 +12,11 @@
   font-family: 'Hammersmith One', sans-serif;
   font-weight: 700 !important;
   letter-spacing: 1px;
-  padding: 15px 15px 15px 5px;
+  padding: 15px 15px 10px 5px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
