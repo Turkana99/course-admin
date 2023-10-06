@@ -30,6 +30,7 @@ import {
   TuiDataListWrapperModule,
   TuiInputDateModule,
   TuiInputModule,
+  TuiMultiSelectModule,
   TuiSelectModule,
 } from '@taiga-ui/kit';
 import { NewGroupComponent } from './dialog/new-group/new-group.component';
@@ -64,11 +65,14 @@ import { NewGroupComponent } from './dialog/new-group/new-group.component';
     TuiInputModule,
     TuiInputDateModule,
     TuiSelectModule,
+    TuiMultiSelectModule,
     TuiDataListModule,
     TuiDataListWrapperModule,
     TuiButtonModule,
     TuiRootModule,
     TuiDialogModule,
+    TuiDataListModule,
+    TuiDataListWrapperModule,
   ],
   providers: [
     { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },

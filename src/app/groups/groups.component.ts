@@ -18,7 +18,7 @@ export interface PeriodicElement {
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 1,
-    name: 'Frontend A',
+    name: 'Frontend F1',
     student: 10,
     startdate: '19-01-2023',
     enddate: 'Continue',
@@ -26,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 2,
-    name: 'Backend A',
+    name: 'Backend B1',
     student: 5,
     startdate: '19-01-2023',
     enddate: '19-01-2023',
@@ -34,7 +34,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 3,
-    name: 'Robotics A',
+    name: 'Robotics R1',
     student: 6,
     startdate: '19-01-2023',
     enddate: '19-01-2023',
@@ -42,7 +42,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 4,
-    name: 'Robotics B',
+    name: 'Robotics R1',
     student: 9,
     startdate: '19-01-2023',
     enddate: 'Continue',
@@ -50,7 +50,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 5,
-    name: 'Frontend B',
+    name: 'Frontend F2',
     student: 10,
     startdate: '19-01-2023',
     enddate: '19-01-2023',
@@ -58,7 +58,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 6,
-    name: 'Backend B',
+    name: 'Backend B1',
     student: 12,
     startdate: '19-01-2023',
     enddate: 'Continue',
@@ -66,7 +66,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 7,
-    name: 'UI/UX A',
+    name: 'UI/UX U1',
     student: 5,
     startdate: '19-01-2023',
     enddate: 'Continue',
@@ -74,7 +74,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 8,
-    name: 'UI/UX B',
+    name: 'UI/UX U2',
     student: 6,
     startdate: '19-01-2023',
     enddate: 'Continue',
@@ -82,7 +82,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     position: 9,
-    name: 'Frontend C',
+    name: 'Frontend F2',
     student: 8,
     startdate: '19-01-2023',
     enddate: '19-01-2023',
