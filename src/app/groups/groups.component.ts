@@ -119,7 +119,7 @@ export class GroupsComponent {
     studentValue: new FormControl(''),
     startValue: new FormControl(new TuiDay(2023, 0, 1)),
     endValue: new FormControl(new TuiDay(2023, 0, 1)),
-    statusValue: new FormControl()
+    statusValue: new FormControl(),
   });
 
   applyFilter(event: Event) {

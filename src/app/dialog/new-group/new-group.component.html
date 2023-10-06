@@ -1,4 +1,39 @@
 <div class="search-content">
-<p class="tui-text_h5">Add new group</p>
+  <p class="tui-text_h5 pb-3">Add new group</p>
+  <form [formGroup]="newGroupForm">
+    <!--Name-->
+    <tui-input formControlName="nameValue" class="name mb-3">
+      Name
+      <input tuiTextfield />
+    </tui-input>
+    <!--Student counts-->
+    <tui-input formControlName="studentValue" class="w-100 mb-3">
+      Students counts
+      <input tuiTextfield />
+    </tui-input>
+    <!--Start date-->
+    <tui-input-date class="w-100 mb-3" formControlName="startValue">
+      Choose a date
+      <input tuiTextfield />
+    </tui-input-date>
 
+    <!--End date-->
+    <tui-input-date class="w-100 mb-3" formControlName="endValue">
+      Choose a date
+      <input tuiTextfield />
+    </tui-input-date>
+
+    <!--Status-->
+    <tui-select formControlName="statusValue" class="w-100 mb-3">
+      Status
+      <tui-data-list-wrapper
+        *tuiDataList
+        [items]="items"
+      ></tui-data-list-wrapper>
+    </tui-select>
+
+    <div class="mt-3 d-flex justify-content-end">
+      <button mat-raised-button color="primary" class="mt-2">Add</button>
+    </div>
+  </form>
 </div>

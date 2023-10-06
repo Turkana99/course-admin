@@ -1,7 +1,14 @@
 <div class="main mt-3 pt-3 pb-3">
   <div class="d-flex justify-content-between">
     <h1>Groups</h1>
-    <button mat-raised-button color="primary" class="mt-3" (click)="showDialog()">+ Add new group</button>
+    <button
+      mat-raised-button
+      color="primary"
+      class="mt-2"
+      (click)="showDialog()"
+    >
+      + Add new group
+    </button>
   </div>
 
   <!--Filter-->
@@ -73,7 +80,7 @@
   </div>
 
   <!--Table-->
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-3">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-3 mb-3">
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
@@ -131,11 +138,13 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
   </mat-table>
+
+  <mat-paginator
+    class="pb-2"
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
 </div>
-<mat-paginator
-  [length]="100"
-  [pageSize]="10"
-  [pageSizeOptions]="[5, 10, 25, 100]"
-  aria-label="Select page"
->
-</mat-paginator>

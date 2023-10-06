@@ -1,19 +1,21 @@
 <tui-root>
-  <tui-root>
     <app-header></app-header>
     <div class="d-flex">
       <app-sidebar></app-sidebar>
       <tui-scrollbar  
+      class="content2"
       style="
       overflow-y: auto !important;
       width: 100%;
       height: calc(100vh - 60px);
     ">
-      <div>
-        <router-outlet></router-outlet>
+      <div class="content">
+        <div style="min-height: calc(100vh - 160px);display: flex; flex-direction: column;">
+          <router-outlet></router-outlet>
+        </div>
         <app-footer></app-footer>
       </div>
     </tui-scrollbar>
     </div>
   </tui-root>
-</tui-root>
+
