@@ -1,0 +1,123 @@
+<div class="search-content">
+  <p class="tui-text_h5 pb-3">Add new student</p>
+  <form [formGroup]="newStudentForm" class="b-form">
+    <!--Name-->
+    <tui-input
+      class="me-2 w-100 mb-3"
+      style="width: 33%"
+      formControlName="nameValue"
+      aria-placeholder="Enter name pls"
+    >
+      Enter name
+      <input tuiTextfield />
+    </tui-input>
+
+    <!--Surname Count-->
+    <tui-input
+      class="me-2 w-100 mb-3"
+      style="width: 33%"
+      formControlName="surnameValue"
+      placeholder="Ex. ium"
+      #input
+    >
+      Enter surname
+      <input tuiTextfield />
+    </tui-input>
+
+    <!--Birth date-->
+    <tui-input-date
+      class="w-100 mb-3"
+      style="width: 33%"
+      formControlName="birthValue"
+    >
+      Choose a date
+      <input tuiTextfield />
+    </tui-input-date>
+
+    <!--Status-->
+    <tui-select
+      class="me-2 w-100 mb-3"
+      formControlName="statusValue"
+      style="width: 33%"
+    >
+      Gender
+      <tui-data-list-wrapper
+        *tuiDataList
+        [items]="gender"
+      ></tui-data-list-wrapper>
+    </tui-select>
+
+    <!--Phone-->
+    <tui-input
+      class="me-2 w-100 mb-3"
+      style="width: 33%"
+      formControlName="phoneValue"
+      aria-placeholder="Enter name pls"
+    >
+      Enter phone
+      <input tuiTextfield />
+    </tui-input>
+
+    <!--Email-->
+    <tui-input
+      class="w-100 mb-3"
+      style="width: 33%"
+      formControlName="emailValue"
+      aria-placeholder="Enter email pls"
+    >
+      Enter email
+      <input tuiTextfield />
+    </tui-input>
+
+    <!--Course-->
+    <tui-multi-select
+      style="width: 33%"
+      placeholder="Ignored text"
+      class="b-form me-2 w-100 mb-3"
+      formControlName="course"
+      [tagValidator]="tagValidator"
+      [(search)]="search"
+    >
+      Course
+      <tui-data-list-wrapper
+        *tuiDataList
+        tuiMultiSelectGroup
+        [items]="filter2(search)"
+      ></tui-data-list-wrapper>
+    </tui-multi-select>
+
+    <!--Group-->
+    <tui-multi-select
+      style="width: 33%"
+      placeholder="Ignored text"
+      class="b-form me-2 w-100 mb-3"
+      formControlName="group"
+      [tagValidator]="tagValidator"
+      [(search)]="search"
+    >
+      Group
+      <tui-data-list-wrapper
+        *tuiDataList
+        tuiMultiSelectGroup
+        [items]="filter(search)"
+      ></tui-data-list-wrapper>
+    </tui-multi-select>
+
+    <!--Status-->
+    <tui-select
+      class="w-100 mb-3"
+      formControlName="statusValue"
+      style="width: 33%"
+    >
+      Status
+      <tui-data-list-wrapper
+        *tuiDataList
+        [items]="items"
+      ></tui-data-list-wrapper>
+    </tui-select>
+
+    <div class="mt-3 d-flex justify-content-end">
+      <button mat-raised-button color="primary" class="mt-2">Add</button>
+    </div>
+  </form>
+</div>

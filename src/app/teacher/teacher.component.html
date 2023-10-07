@@ -1,1 +1,271 @@
-<p>teacher works!</p>
+<div class="main mt-3 pt-3 pb-3">
+  <div class="d-flex justify-content-between">
+    <h1>Teachers</h1>
+    <button
+      mat-raised-button
+      color="primary"
+      class="mt-2"
+      (click)="showDialog()"
+    >
+      + Add new teacher
+    </button>
+  </div>
+
+  <!--Filter-->
+  <div class="filter mb-4">
+    <form [formGroup]="studentForm" class="b-form">
+      <div class="d-flex w-100 pb-3">
+        <!--Name-->
+        <tui-input
+          class="me-2"
+          style="width: 25%"
+          formControlName="nameValue"
+          (keyup)="applyFilter($event)"
+          aria-placeholder="Enter name pls"
+        >
+          Enter name
+          <input tuiTextfield />
+        </tui-input>
+
+        <!--Surname Count-->
+        <tui-input
+          class="me-2"
+          style="width: 25%"
+          formControlName="surnameValue"
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. ium"
+          #input
+        >
+          Enter surname
+          <input tuiTextfield />
+        </tui-input>
+
+        <!--Birth date-->
+        <tui-input-date
+        class="me-2"
+          style="width: 25%"
+          (keyup)="applyFilter($event)"
+          formControlName="birthValue"
+        >
+          Choose a date
+          <input tuiTextfield />
+        </tui-input-date>
+
+        <!--Gender-->
+        <tui-select
+          class="me-2"
+          formControlName="statusValue"
+          (keyup)="applyFilter($event)"
+          style="width: 25%"
+        >
+          Gender
+          <tui-data-list-wrapper
+            *tuiDataList
+            [items]="gender"
+          ></tui-data-list-wrapper>
+        </tui-select>
+      </div>
+
+      <div class="d-flex w-100 pb-3">
+        <!--Phone-->
+        <tui-input
+          class="me-2"
+          style="width: 25%"
+          formControlName="phoneValue"
+          (keyup)="applyFilter($event)"
+          aria-placeholder="Enter name pls"
+        >
+          Enter phone
+          <input tuiTextfield />
+        </tui-input>
+
+        <!--Email-->
+        <tui-input
+          style="width: 25%"
+          class="me-2"
+          formControlName="emailValue"
+          (keyup)="applyFilter($event)"
+          aria-placeholder="Enter email pls"
+        >
+          Enter email
+          <input tuiTextfield />
+        </tui-input>
+
+        <!--Course-->
+        <tui-multi-select
+          style="width: 25%"
+          placeholder="Ignored text"
+          class="b-form me-2"
+          formControlName="course"
+          [tagValidator]="tagValidator"
+          [(search)]="search"
+        >
+          Course
+          <tui-data-list-wrapper
+            *tuiDataList
+            tuiMultiSelectGroup
+            [items]="filter2(search)"
+          ></tui-data-list-wrapper>
+        </tui-multi-select>
+
+        <!--Group-->
+        <tui-multi-select
+          style="width: 25%"
+          placeholder="Ignored text"
+          class="b-form me-2"
+          formControlName="group"
+          [tagValidator]="tagValidator"
+          [(search)]="search"
+        >
+          Group
+          <tui-data-list-wrapper
+            *tuiDataList
+            tuiMultiSelectGroup
+            [items]="filter(search)"
+          ></tui-data-list-wrapper>
+        </tui-multi-select>
+      </div>
+      <div class="d-flex w-100 pb-3">
+        <!--Start date-->
+        <tui-input-date
+        class="me-2"
+          style="width: 25%"
+          (keyup)="applyFilter($event)"
+          formControlName="startdateValue"
+        >
+          Choose a date
+          <input tuiTextfield />
+        </tui-input-date>
+
+        <!--End  date-->
+        <tui-input-date
+        class="me-2"
+          style="width: 25%"
+          (keyup)="applyFilter($event)"
+          formControlName="enddateValue"
+        >
+          Choose a date
+          <input tuiTextfield />
+        </tui-input-date>
+
+        <!--Status-->
+        <tui-select
+          formControlName="statusValue"
+          (keyup)="applyFilter($event)"
+          style="width: 25%"
+        >
+          Status
+          <tui-data-list-wrapper
+            *tuiDataList
+            [items]="items"
+          ></tui-data-list-wrapper>
+        </tui-select>
+      </div>
+    </form>
+  </div>
+
+  <!--Table-->
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8 mt-3 mb-3">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.position }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+    </ng-container>
+
+    <!-- Surname Column -->
+    <ng-container matColumnDef="surname">
+      <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.surname }} </mat-cell>
+    </ng-container>
+
+    <!-- Birthdate Column -->
+    <ng-container matColumnDef="birthdate">
+      <mat-header-cell *matHeaderCellDef> Birthdate </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.birthdate }} </mat-cell>
+    </ng-container>
+
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.gender }} </mat-cell>
+    </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.phone }} </mat-cell>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.email }} </mat-cell>
+    </ng-container>
+
+    <!-- Course Column -->
+    <ng-container matColumnDef="course">
+      <mat-header-cell *matHeaderCellDef> Course </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.course }} </mat-cell>
+    </ng-container>
+
+    <!-- Group Column -->
+    <ng-container matColumnDef="group">
+      <mat-header-cell *matHeaderCellDef> Group </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.group }} </mat-cell>
+    </ng-container>
+
+    <!-- Startdate Column -->
+    <ng-container matColumnDef="startdate">
+      <mat-header-cell *matHeaderCellDef> Birthdate </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.startdate }} </mat-cell>
+    </ng-container>
+
+    <!-- Enddate Column -->
+    <ng-container matColumnDef="enddate">
+      <mat-header-cell *matHeaderCellDef> Birthdate </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.enddate }} </mat-cell>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.status }} </mat-cell>
+    </ng-container>
+
+    <!-- Go Detail -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell class="icon" *matCellDef="let element">
+        <button
+          [matMenuTriggerFor]="menu"
+          mat-icon-button
+          aria-label="Example icon button with a vertical three dot icon"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item><mat-icon>edit</mat-icon>Edit</button>
+          <button mat-menu-item><mat-icon>delete</mat-icon>Delete</button>
+        </mat-menu>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
+  </mat-table>
+
+  <mat-paginator
+    class="pb-2"
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>

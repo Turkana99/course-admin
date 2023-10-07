@@ -34,6 +34,8 @@ import {
   TuiSelectModule,
 } from '@taiga-ui/kit';
 import { NewGroupComponent } from './dialog/new-group/new-group.component';
+import { NewStudentComponent } from './dialog/new-student/new-student.component';
+import { NewTeacherComponent } from './dialog/new-teacher/new-teacher.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { NewGroupComponent } from './dialog/new-group/new-group.component';
     AppealsComponent,
     V1Component,
     NewGroupComponent,
+    NewStudentComponent,
+    NewTeacherComponent,
   ],
   imports: [
     BrowserModule,

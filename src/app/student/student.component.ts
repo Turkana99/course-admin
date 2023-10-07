@@ -8,8 +8,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { TUI_DEFAULT_MATCHER, TuiBooleanHandler, TuiDay, tuiPure } from '@taiga-ui/cdk';
 import { TuiDialogService } from '@taiga-ui/core';
-import { NewGroupComponent } from '../dialog/new-group/new-group.component';
 import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
+import { NewStudentComponent } from '../dialog/new-student/new-student.component';
 
 export interface PeriodicElement {
   position: number;
@@ -63,8 +63,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
 ];
 const ITEMS: readonly string[] = [
-  'Frontend F1', 
-  'Frontend F2', 
+  'Frontend F1',
+  'Frontend F2',
   'Backend B1',
   'Backend B2',
   'UI/UX U1',
@@ -73,8 +73,8 @@ const ITEMS: readonly string[] = [
   'Robotics R2'
 ];
 const ITEMS2: readonly string[] = [
-  'Frontend', 
-  'Backend', 
+  'Frontend',
+  'Backend',
   'UI/UX design',
   'Robotics'
 ];
@@ -103,7 +103,7 @@ export class StudentComponent {
 
   items = ['Active', 'Deactive'];
   gender = ['Female', 'Male'];
- 
+
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -130,7 +130,7 @@ export class StudentComponent {
   ) {}
 
   search: string | null = '';
- 
+
   readonly control = new FormControl([ITEMS[0]]);
   readonly control2 = new FormControl([ITEMS2[0]]);
 
@@ -147,7 +147,7 @@ export class StudentComponent {
 
   showDialog(): void {
     this.dialogs
-      .open(new PolymorpheusComponent(NewGroupComponent, this.injector), {})
+      .open(new PolymorpheusComponent(NewStudentComponent, this.injector), {})
       .subscribe();
   }
 
