@@ -17,6 +17,11 @@
       <input tuiTextfield />
     </tui-input-date>
 
+    <tui-checkbox-labeled formControlName="testValue1">
+      Present
+    </tui-checkbox-labeled>
+    <br />
+
     <!--End date-->
     <tui-input-date class="w-100 mb-3" formControlName="endValue">
       Choose a date
@@ -33,7 +38,9 @@
     </tui-select>
 
     <div class="mt-3 d-flex justify-content-end">
-      <button mat-raised-button color="primary" class="mt-2">Add</button>
+      <button type="button" (click)="close()" mat-raised-button color="primary" class="mt-2">
+        Add
+      </button>
     </div>
   </form>
 </div>

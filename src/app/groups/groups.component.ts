@@ -1,10 +1,15 @@
-import { ChangeDetectionStrategy,Component, Inject, Injector } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  Injector,
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { TuiDay } from '@taiga-ui/cdk';
 import { TuiDialogService } from '@taiga-ui/core';
 import { NewGroupComponent } from '../dialog/new-group/new-group.component';
-import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
 
 export interface PeriodicElement {
   name: string;
@@ -15,7 +20,7 @@ export interface PeriodicElement {
   status: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+let ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 1,
     name: 'Frontend F1',
@@ -106,11 +111,8 @@ export class GroupsComponent {
     'actions',
   ];
   value = null;
- 
-  items = [
-    'Active',
-    'Deactive'
-];
+  isEdit = false;
+  items = ['Active', 'Deactive'];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -129,17 +131,27 @@ export class GroupsComponent {
 
   constructor(
     @Inject(TuiDialogService) private readonly dialogs: TuiDialogService,
-    @Inject(Injector) private readonly injector: Injector,
-) {}
+    @Inject(Injector) private readonly injector: Injector
+  ) {}
 
-showDialog(): void {
-  this.dialogs
-      .open(
-          new PolymorpheusComponent(NewGroupComponent, this.injector),
-          {
-              
-          },
-      )
-      .subscribe();
-}
+  showDialog(dialogdata: any = null): void {
+    this.dialogs
+      .open(new PolymorpheusComponent(NewGroupComponent, this.injector), {
+        data: dialogdata,
+      })
+      .subscribe({
+        next: (x: any) => {
+          console.log('data', x);
+          if (dialogdata) {
+            console.log('dialogdata', dialogdata);
+            // let x = ELEMENT_DATA.find(elem=>elem.position === dialogdata.position);
+            dialogdata.name = x.nameValue;
+          } else {
+            console.log('THIS IS CREATE');
+          }
+        },
+        error: (err) => {},
+        complete: () => {},
+      });
+  }
 }

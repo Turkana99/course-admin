@@ -1,1 +1,70 @@
-<p>appeals works!</p>
+<div class="main mt-3 pt-3 pb-5">
+  <h1>Appeals</h1>
+  <div class="w-100">
+    <!--First-->
+    <tui-accordion-item class="container-fluid w-100 p-0 m-0">
+      İmran Ahmadov - Frontend
+      <ng-template tuiAccordionItemContent>
+        <tui-tabs [(activeItemIndex)]="activeItemIndex">
+          <button
+              tuiTab
+              (click)="onClick('Maps')"
+          >
+              <!-- <tui-svg
+                  src="tuiIconCreditCard"
+                  class="tui-space_right-2"
+              ></tui-svg> -->
+              Maps
+          </button>
+          <button
+              tuiTab
+              (click)="onClick('Calls')"
+          >
+              <!-- <tui-svg
+                  src="tuiIconPhone"
+                  class="tui-space_right-2"
+              ></tui-svg> -->
+              Calls
+          </button>
+          <button
+              tuiTab
+              (click)="onClick('Settings')"
+          >
+              <!-- <tui-svg
+                  src="tuiIconSettings"
+                  class="tui-space_right-2"
+              ></tui-svg> -->
+              Settings
+          </button>
+      </tui-tabs>
+      <tui-input-count
+          class="tui-space_top-4"
+          [(ngModel)]="activeItemIndex"
+      >
+          <p class="py-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex sunt enim, vero, vel exercitationem atque culpa unde reprehenderit praesentium harum nisi accusamus, id iste ad laudantium labore explicabo. Totam, rem! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio iure, adipisci nobis deleniti fugit pariatur sequi aut esse delectus a dolores tempora commodi expedita quas eum, vero architecto? Praesentium, cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non expedita illo accusantium, eum repellendus eaque corporis animi fugiat totam ut, deleniti reiciendis excepturi. Laborum at dolorum sunt iusto natus quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quod atque ratione commodi minus cumque incidunt voluptatum quasi aperiam. Voluptatem, dolorem laboriosam a quis in quo doloribus sunt quisquam necessitatibus.</p>
+      </tui-input-count>
+
+      </ng-template>
+    </tui-accordion-item>
+    <br>
+
+    <!--First-->
+    <tui-accordion-item class="container-fluid w-100 p-0 m-0">
+     Nigar Asadova - Backend
+      <ng-template tuiAccordionItemContent>
+        Development kit consisting of the low level tools and abstractions used
+        to develop Taiga UI Angular entities
+      </ng-template>
+    </tui-accordion-item>
+    <br>
+
+    <!--First-->
+    <tui-accordion-item class="container-fluid w-100 p-0 m-0">
+     Turkana Mammadova - Frontend
+      <ng-template tuiAccordionItemContent>
+        Development kit consisting of the low level tools and abstractions used
+        to develop Taiga UI Angular entities
+      </ng-template>
+    </tui-accordion-item>
+  </div>
+</div>

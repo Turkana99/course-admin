@@ -27,11 +27,14 @@ import { MatTableModule } from '@angular/material/table';
 import { V1Component } from './v1/v1.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
+  TuiAccordionModule,
+  TuiCheckboxLabeledModule,
   TuiDataListWrapperModule,
   TuiInputDateModule,
   TuiInputModule,
   TuiMultiSelectModule,
   TuiSelectModule,
+  TuiTabsModule,
 } from '@taiga-ui/kit';
 import { NewGroupComponent } from './dialog/new-group/new-group.component';
 import { NewStudentComponent } from './dialog/new-student/new-student.component';
@@ -77,6 +80,9 @@ import { NewTeacherComponent } from './dialog/new-teacher/new-teacher.component'
     TuiDialogModule,
     TuiDataListModule,
     TuiDataListWrapperModule,
+    TuiAccordionModule,
+    TuiTabsModule,
+    TuiCheckboxLabeledModule,
   ],
   providers: [
     { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },
